@@ -16,6 +16,6 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5500
 
-ENV YOUR_NAME="Hugh"
+ENV YOUR_NAME="Hugh Lacey"
 
 ENTRYPOINT [ "python", "app.py" ]
