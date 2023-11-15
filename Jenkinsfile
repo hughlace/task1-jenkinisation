@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                docker build -t stratcastor/task1jenk .
+                docker build -t hughston05/task1-jenk .
                 '''
             }
 
@@ -12,7 +12,7 @@ pipeline {
         stage('Push') {
             steps {
                 sh '''
-                docker push stratcastor/task1jenk
+                docker push hughston05/task1-jenk
                 '''
             }
 
@@ -20,9 +20,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                docker stop task1
-                docker rm task1
-                docker run -d -p 80:5500 --name task1 stratcastor/task1jenk
+                #docker stop task1
+                #docker rm task1
+                docker run -d -p 80:5500 --name task1 hughston05/task-1jenk
                 '''
             }
 
