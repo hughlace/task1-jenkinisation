@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                docker build -t hughston05/task1-nginx nginx //mayneedfullstop
+                docker build -t hughston05/task1-nginx nginx .
                 '''
             }
 
