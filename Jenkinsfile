@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    environment {YOUR_NAME = credentials("YOUR_NAME")}
     stages {
         stage('Build') {
             steps {
@@ -21,6 +22,7 @@ pipeline {
             steps {
                 sh '''
                 ssh jenkins@hugh-deploy <<EOF
+                export YOUR_NAME = ${YOUR_NAME}
                 docker network rm task1-net && echo "task1net removed" || echo "task1-net does not exist"
                 docker network create task1-net
                 docker stop task1-nginx && echo "stopped nginx" || echo " nginx is not running"

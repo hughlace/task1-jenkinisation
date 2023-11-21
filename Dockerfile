@@ -13,6 +13,7 @@ WORKDIR /app
 COPY . .
 
 RUN pip install -r requirements.txt
+RUN network  task1-net -e YOUR_NAME=${YOUR_NAME}
 
 EXPOSE 5500
 
